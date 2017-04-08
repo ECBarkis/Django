@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Time Display</title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				margin: 0px auto;
+				padding: 20px;
+				text-align: center;
+			}
+			p, h1{
+				border: 1px solid black;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>This is the current time and date:</p>
+			<h1>{{ somekey | date:'N d, Y' }}<br>{{ somekey | date:'h:i:s A' }}</h1>
+
+		</div>
+	</body>
+</html>
