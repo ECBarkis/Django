@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Disappearing Ninjas</title>
+		<style type="text/css">
+			#container{
+				width: 970px;
+				margin: 0px auto;
+				padding: 20px;
+			}
+		</style>
+		{% load static %}
+	</head>
+	<body>
+		<div id="container">
+			{% if ninjas == '' %}
+			<img src="{% static 'ninjas/img/tmnt.png' %}">
+			{% elif ninjas == 'purple' %}
+			<img src="{% static 'ninjas/img/donatello.jpg' %}">
+			{% elif ninjas == 'red' %}
+			<img src="{% static 'ninjas/img/raphael.jpg' %}">
+			{% elif ninjas == 'blue' %}
+			<img src="{% static 'ninjas/img/leonardo.jpg' %}">
+			{% elif ninjas == 'orange' %}
+			<img src="{% static 'ninjas/img/michelangelo.jpg' %}">
+			{% elif ninjas %}
+			<img src="{% static 'ninjas/img/notapril.jpg' %}">
+			{% endif %}
+		</div>
+	</body>
+</html>
