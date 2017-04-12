@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Success</title>
+		<style type="text/css">
+			body{
+				width: 400px;
+				margin: 0px auto;
+				padding: 20px;
+			}
+			#success{
+				background-color: green;
+				display: inline-block;
+				border: 1px solid black;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+	<p id="success">The email address you entered {{ email.email }}<br>is a VALID email address! Thank you!</p>
+		<h1>Email Address Entered</h1>
+		<table>
+			{% for email in emails%}
+			<tr>
+				<td>{{ email.email }}</td>
+				<td>{{ email.created_at}}</td>
+				<td><a href="/{{ email.id }}/delete">delete</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

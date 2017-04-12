@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Email Validations</title>
+		<style type="text/css">
+			body{
+				width: 400px;
+				margin: 0px auto;
+				padding: 20px;
+			}
+			#error{
+				background-color: red;
+				display: inline-block;
+				border: 1px solid black;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="/create" method="post">
+			{% csrf_token %}
+			<label>Email Address:</label>
+			<input type="text" name="email">
+			<input type="submit" value="Submit">
+		</form>
+		{% if request.session.error %}
+			<h1 id="error">{{ request.session.error }}</h1>
+		{% endif %}
+	</body>
+</html>
